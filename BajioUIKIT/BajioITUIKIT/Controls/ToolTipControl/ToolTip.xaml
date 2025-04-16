@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<rgpopup:PopupPage
+    x:Class="BajioITUIKIT.Controls.ToolTip"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:icon="clr-namespace:BajioITUIKIT.Controls"
+    xmlns:rganimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:rgpopup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <rgpopup:PopupPage.Animation>
+        <rganimations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </rgpopup:PopupPage.Animation>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout
+            x:Name="Content2"
+            Margin="15"
+            BackgroundColor="{Binding ContentBackgroundColor}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Grid>
+                <icon:BajioIcon
+                    Padding="5"
+                    HorizontalOptions="End"
+                    Icon="close"
+                    Size="25"
+                    VerticalOptions="Start"
+                    Color="{Binding TextColor}">
+                    <icon:BajioIcon.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                    </icon:BajioIcon.GestureRecognizers>
+                </icon:BajioIcon>
+                <Label
+                    Margin="20"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="{Binding AlertText}"
+                    TextColor="{Binding TextColor}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</rgpopup:PopupPage>

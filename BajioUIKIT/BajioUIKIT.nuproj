@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{575DA150-37A2-49E5-B83B-56D6B1D44CEE}</ProjectGuid>
+    <Description>Bajio UIKIT</Description>
+    <PackageId>BajioUIKIT</PackageId>
+    <PackageVersion>2.0.2</PackageVersion>
+    <Authors>Jair Padilla</Authors>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BajioUIKIT</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>BajioUIKIT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Owners>Bajio IT</Owners>
+    <Copyright>Bajio IT Copyright</Copyright>
+    <Title>Bajio IT UI-KIT</Title>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="readme.txt">
+      <IncludeInPackage>true</IncludeInPackage>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.5-dev.8</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BajioITUIKIT\BajioITUIKIT.csproj">
+      <Project>{654D24A7-A7AA-4F2A-B4EC-0FFF64EAA18E}</Project>
+      <Name>BajioITUIKIT</Name>
+    </ProjectReference>
+    <ProjectReference Include="BajioITUIKIT.Android\BajioITUIKIT.Android.csproj">
+      <Project>{E70CE4F5-8892-47C6-B7C8-5F8D5554CD5E}</Project>
+      <Name>BajioITUIKIT.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="BajioITUIKIT.iOS\BajioITUIKIT.iOS.csproj">
+      <Project>{BD031FFA-77BD-4A68-9535-D4DAF63B4AF5}</Project>
+      <Name>BajioITUIKIT.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />
+</Project>

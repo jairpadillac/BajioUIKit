@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BajioITUIKIT.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:BajioITUIKIT.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <controls:BajioEntry
+            x:Name="Username"
+            Title="Usuario"
+            Margin="0,10"
+            ClearButtonEnable="false"
+            CornerRadius="5"
+            EntryFontSize="14"
+            EntryHeight="45"
+            EntryMaxLength="40"
+            EntryTextColor="Black"
+            Error="{Binding ErrorUsuario}"
+            ErrorMessage="{Binding ErrorMessage}"
+            Mask="Email"
+            NextView="{x:Reference Password}"
+            ReturnType="Next"
+            ShowOrHideEnable="False"
+            Text="{Binding Email}"
+            TitleFontSize="14" />
+        <controls:BajioEntry
+            x:Name="Password"
+            Title="Contraseña"
+            Margin="0,10"
+            ClearButtonEnable="false"
+            CornerRadius="5"
+            EntryFontSize="14"
+            EntryHeight="45"
+            EntryMaxLength="40"
+            EntryTextColor="Black"
+            Error="True"
+            ErrorMessage="Mostrar error"
+            Mask="Password"
+            OnCompleteCommand="{Binding LoginCommand}"
+            PreventKeyboardSuggestions="True"
+            ReturnType="SignIn"
+            ShouldInvokeAction="True"
+            ShowOrHideEnable="False"
+            Text="{Binding Password}"
+            TitleFontSize="14" />
+    </StackLayout>
+</ContentPage>

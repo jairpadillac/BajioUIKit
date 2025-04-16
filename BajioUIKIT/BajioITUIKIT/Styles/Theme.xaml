@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="BajioITUIKIT.Styles.Theme"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="PrimaryColor">#3DBC9C</Color>
+    <Color x:Key="PrimaryColorButton">#3DBC9C</Color>
+    <Color x:Key="SecundaryColorButton">#FFFFFF</Color>
+    <Color x:Key="PrimaryTextcolorButton">White</Color>
+    <Color x:Key="PrimaryBorderColorButton">#061B3F</Color>
+
+    <Color x:Key="InactiveColor">#D2D4D7</Color>
+    <Color x:Key="EntryStrokeBorder">#BDBDBD</Color>
+    <Color x:Key="InvalidColorPrimary">#E35235</Color>
+    <Color x:Key="EntryEnabledBackground">White</Color>
+    <Color x:Key="EntryDisabledBackground">#EBEBEB</Color>
+    <Color x:Key="EntryClearButtonColor">#9B9B9B</Color>
+    <Color x:Key="TextColorSecondary">#364754</Color>
+    <Color x:Key="AlertBackgroundPrimary">#416682</Color>
+    <Color x:Key="TextColorPrimary">White</Color>
+    <Color x:Key="InactiveColorPrimary">#D2D4D7</Color>
+    <Color x:Key="TextColorThird">#DFDFDF</Color>
+    <Color x:Key="TextInactiveColorSecondary">#818181</Color>
+    <Color x:Key="ColorSecondary">#FFFFFF</Color>
+    <Color x:Key="EntryPlaceholderColor">#787878</Color>
+    <Color x:Key="TextColorTitleTabPage">#FFFFFF</Color>
+
+    <Style x:Key="PrimaryButton" TargetType="Button">
+        <Setter Property="BorderRadius" Value="10" />
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColorButton}" />
+        <Setter Property="TextColor" Value="{StaticResource PrimaryTextcolorButton}" />
+        <Setter Property="BorderColor" Value="{StaticResource PrimaryBorderColorButton}" />
+    </Style>
+
+    <Style x:Key="SecundaryButton" TargetType="Button">
+        <Setter Property="BorderRadius" Value="10" />
+        <Setter Property="BackgroundColor" Value="{StaticResource SecundaryColorButton}" />
+        <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="BorderWidth" Value="1" />
+    </Style>
+
+    <Style x:Key="label-primary" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="{StaticResource TextColorSecondary}" />
+    </Style>
+
+    <Style
+        x:Key="label"
+        BasedOn="{StaticResource label-primary}"
+        TargetType="Label">
+        <Setter Property="Margin" Value="0,5,0,5" />
+    </Style>
+</ResourceDictionary>
